@@ -58,12 +58,12 @@ export const verifyJWTRefresh = async (req: Request & {jwt: JwtPayload} & {token
       return;
     }
 
-    const newTokens = {
-      accessToken: createToken(user),
-      refreshToken: await createRefreshToken(user),
-    }
+    // const newTokens = {
+    //   accessToken: createToken(user),
+    //   refreshToken: await createRefreshToken(user),
+    // }
 
-    req.tokens = newTokens;
+    // req.tokens = newTokens;
     next();
   });
 }

@@ -20,6 +20,7 @@ const {
   PASS_RESET,
   EMAIL_CONFIRM,
   SUBS_PAGE,
+  SMSRU_APIID,
 } = process.env;
 
 const serverConfig = { port: PORT, host: HOST, hostUrl: HOST_URL };
@@ -55,4 +56,5 @@ module.exports = {
   jwtExpiryTime,
   refreshExpiryTime,
   mailConfig,
+  SMSRU_APIID,
 };

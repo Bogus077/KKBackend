@@ -1,6 +1,6 @@
 FROM node:14
 
-WORKDIR /var/www/granite/
+WORKDIR /var/www/kk/
 
 COPY package.json . 
 

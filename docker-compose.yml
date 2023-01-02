@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: docker/nginx.Dockerfile
     ports:
-      - "3000:3000"
+      - "3030:3030"
     depends_on:
       - nodejs
   nodejs:
@@ -20,7 +20,7 @@ services:
     links:
       - pgdb:pgdb
     volumes:
-      - ./:/var/www/granite/
+      - ./:/var/www/kk/
     extra_hosts:
       - 'smtp.yandex.ru:77.88.21.158'
   pgdb:

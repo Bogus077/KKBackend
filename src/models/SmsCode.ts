@@ -1,21 +1,19 @@
 import { sequelize } from '../database/database.config';
-import { Association, CreationOptional, DataTypes as Sequelize, ForeignKey, InferAttributes, InferCreationAttributes, Model, NonAttribute } from "sequelize";
+import { CreationOptional, DataTypes as Sequelize, ForeignKey, InferAttributes, InferCreationAttributes, Model } from "sequelize";
+import { User } from "./User";
 
-export class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
+export class SmsCode extends Model<InferAttributes<SmsCode>, InferCreationAttributes<SmsCode>> {
   declare id: CreationOptional<number>;
   declare phone: string;
-  declare password: string;
-  declare name: CreationOptional<string>;
-  declare lastName: CreationOptional<string>;
-  declare middleName: CreationOptional<string>;
-
+  declare code: string;
+  declare used: CreationOptional<boolean>;
   // createdAt can be undefined during creation
   declare createdAt: CreationOptional<Date>;
   // updatedAt can be undefined during creation
   declare updatedAt: CreationOptional<Date>;
 }
 
-User.init(
+SmsCode.init(
   {
     id: {
       allowNull: false,
@@ -26,20 +24,12 @@ User.init(
     phone: {
       type: Sequelize.STRING
     },
-    password: {
+    code: {
       type: Sequelize.STRING
     },
-    name: {
+    used: {
       allowNull: true,
-      type: Sequelize.STRING
-    },
-    lastName: {
-      allowNull: true,
-      type: Sequelize.STRING
-    },
-    middleName: {
-      allowNull: true,
-      type: Sequelize.STRING
+      type: Sequelize.BOOLEAN
     },
     createdAt: {
       allowNull: false,
@@ -52,6 +42,6 @@ User.init(
   },
   {
     sequelize,
-    tableName: 'User'
+    tableName: 'SmsCode'
   }
 )
