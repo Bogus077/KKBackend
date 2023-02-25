@@ -1,3 +1,7 @@
+import { JwtPayload } from "jsonwebtoken";
+import { Request } from 'express'
+
+
 export type CreateUserType = {
   request: {
     phone: string;
@@ -12,3 +16,5 @@ export type LoginUserType = {
     password: string;
   }
 }
+
+export type RequestWithJWT = Request & { jwt: JwtPayload };

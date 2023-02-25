@@ -31,3 +31,24 @@ export const loginRules = {
   phone: 'string|required',
   password: 'string|required',
 }
+
+// Kid
+export const kidRules = {
+  name: 'string|required',
+  surname: 'string|required',
+  UserId: 'integer|required',
+}
+
+export const getKidRules = {
+  id: 'integer|required',
+}
+
+export const editKidRules = {
+  id: 'integer|required',
+  name: 'string|required',
+  surname: 'string|required',
+}
+
+export const deleteKidRules = {
+  id: 'integer|required',
+}
